@@ -39,7 +39,7 @@ public class Interface extends javax.swing.JFrame {
         lblPlasticGrade = new javax.swing.JLabel();
         cboPlasticGrade = new javax.swing.JComboBox<>();
         lblColourOption = new javax.swing.JLabel();
-        bcoColourOption = new javax.swing.JComboBox<>();
+        cboColourOption = new javax.swing.JComboBox<>();
         chkInnerInsulation = new javax.swing.JCheckBox();
         chkOuterReinforcement = new javax.swing.JCheckBox();
         chkChemicalResistance = new javax.swing.JCheckBox();
@@ -47,6 +47,7 @@ public class Interface extends javax.swing.JFrame {
         txtQuantity = new javax.swing.JTextField();
         lblOrderCost = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
+        btnFinish = new javax.swing.JButton();
 
         jTextField3.setName("txtPipeDiameter"); // NOI18N
 
@@ -81,8 +82,8 @@ public class Interface extends javax.swing.JFrame {
         lblColourOption.setText("Colour Option:");
         lblColourOption.setName("lblColourOption"); // NOI18N
 
-        bcoColourOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "1", "2" }));
-        bcoColourOption.setName("cboColourOption"); // NOI18N
+        cboColourOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "1", "2" }));
+        cboColourOption.setName("cboColourOption"); // NOI18N
 
         chkInnerInsulation.setText("Inner Insulation:");
         chkInnerInsulation.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -114,6 +115,8 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
+        btnFinish.setText("Finish");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,7 +138,7 @@ public class Interface extends javax.swing.JFrame {
                                         .addComponent(lblColourOption, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(bcoColourOption, 0, 96, Short.MAX_VALUE)
+                                        .addComponent(cboColourOption, 0, 96, Short.MAX_VALUE)
                                         .addComponent(cboPlasticGrade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtPipeLength)
                                         .addComponent(txtPipeDiameter)))
@@ -147,9 +150,14 @@ public class Interface extends javax.swing.JFrame {
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblOrderCost, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblOrderCost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnFinish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(191, 191, 191)
+                                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -173,7 +181,7 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(cboPlasticGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bcoColourOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboColourOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblColourOption))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkInnerInsulation)
@@ -186,10 +194,12 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(lblQuantity)
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrderCost)
-                    .addComponent(btnAdd))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(btnFinish))
+                .addContainerGap())
         );
 
         pack();
@@ -236,12 +246,13 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> bcoColourOption;
     private javax.swing.JButton btnAdd;
-    private javax.swing.JComboBox<String> cboPlasticGrade;
-    private javax.swing.JCheckBox chkChemicalResistance;
-    private javax.swing.JCheckBox chkInnerInsulation;
-    private javax.swing.JCheckBox chkOuterReinforcement;
+    private javax.swing.JButton btnFinish;
+    public javax.swing.JComboBox<String> cboColourOption;
+    public javax.swing.JComboBox<String> cboPlasticGrade;
+    public javax.swing.JCheckBox chkChemicalResistance;
+    public javax.swing.JCheckBox chkInnerInsulation;
+    public javax.swing.JCheckBox chkOuterReinforcement;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField3;

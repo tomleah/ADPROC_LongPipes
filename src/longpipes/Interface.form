@@ -55,7 +55,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="bcoColourOption" pref="96" max="32767" attributes="0"/>
+                                      <Component id="cboColourOption" pref="96" max="32767" attributes="0"/>
                                       <Component id="cboPlasticGrade" max="32767" attributes="0"/>
                                       <Component id="txtPipeLength" max="32767" attributes="0"/>
                                       <Component id="txtPipeDiameter" max="32767" attributes="0"/>
@@ -73,9 +73,17 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="lblOrderCost" min="-2" pref="181" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnAdd" pref="57" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lblOrderCost" min="-2" pref="179" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnFinish" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                              <Component id="btnAdd" pref="57" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -106,7 +114,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bcoColourOption" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboColourOption" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblColourOption" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -121,11 +129,13 @@
                   <Component id="txtQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="8" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblOrderCost" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnFinish" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -193,6 +203,7 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lblColourOption">
@@ -201,7 +212,7 @@
         <Property name="name" type="java.lang.String" value="lblColourOption" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="bcoColourOption">
+    <Component class="javax.swing.JComboBox" name="cboColourOption">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -214,6 +225,7 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkInnerInsulation">
@@ -222,6 +234,9 @@
         <Property name="horizontalTextPosition" type="int" value="2"/>
         <Property name="name" type="java.lang.String" value="chkInnerInsulation" noResource="true"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkOuterReinforcement">
       <Properties>
@@ -229,6 +244,9 @@
         <Property name="horizontalTextPosition" type="int" value="2"/>
         <Property name="name" type="java.lang.String" value="chkOuterReinforcement" noResource="true"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkChemicalResistance">
       <Properties>
@@ -236,6 +254,9 @@
         <Property name="horizontalTextPosition" type="int" value="2"/>
         <Property name="name" type="java.lang.String" value="chkChemicalResistance" noResource="true"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lblQuantity">
       <Properties>
@@ -269,6 +290,11 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAddMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnFinish">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Finish"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
