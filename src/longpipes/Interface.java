@@ -298,7 +298,15 @@ public class Interface extends javax.swing.JFrame {
     private void btnFinishMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinishMousePressed
         handler.switchPanel();
     }//GEN-LAST:event_btnFinishMousePressed
+    
+    private void cboPlasticGradeActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        handler.updateColourOptions();
+    }                                               
 
+    private void cboColourOptionActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        handler.updateCheckboxes();
+    }    
+    
     /**
      * @param args the command line arguments
      */
