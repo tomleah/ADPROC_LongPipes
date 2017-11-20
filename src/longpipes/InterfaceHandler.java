@@ -131,6 +131,39 @@ public class InterfaceHandler {
         for (Pipe pipe : LongPipes.pipes){
             model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), pipe.getTotalCost()});
         }
-        
+    }
+    
+    public void updateColourOptions(){
+        resetColourPrint();
+        if (Integer.parseInt(String.valueOf(ui.cboPlasticGrade.getSelectedItem())) == 1)
+        {
+            ui.cboColourOption.removeItemAt(1);
+            ui.cboColourOption.removeItemAt(1);
+        }
+        else if (Integer.parseInt(String.valueOf(ui.cboPlasticGrade.getSelectedItem())) == 5)
+        {
+            ui.cboColourOption.removeItemAt(0);
+            ui.cboColourOption.removeItemAt(0);
+        } else 
+            ui.cboColourOption.removeItemAt(0);
+    }
+    
+    public void resetColourPrint(){
+        ui.cboColourOption.removeAllItems();
+        ui.cboColourOption.insertItemAt("None", 0);
+        ui.cboColourOption.insertItemAt("1", 1);
+        ui.cboColourOption.insertItemAt("2", 2);
+    }
+    
+    public void updateCheckboxes(){
+        ui.chkInnerInsulation.setEnabled(true);
+        ui.chkOuterReinforcement.setEnabled(true);
+        if (String.valueOf(ui.cboColourOption.getSelectedItem()) != "2"){
+            ui.chkInnerInsulation.setSelected(false);
+            ui.chkOuterReinforcement.setSelected(false);
+            ui.chkInnerInsulation.setEnabled(false);
+            ui.chkOuterReinforcement.setEnabled(false);
+        }
+           
     }
 }
