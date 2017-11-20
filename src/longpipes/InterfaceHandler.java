@@ -151,7 +151,7 @@ public class InterfaceHandler {
     
     public void resetColourPrint(){
         ui.cboColourOption.removeAllItems();
-        ui.cboColourOption.insertItemAt("None", 0);
+        ui.cboColourOption.insertItemAt("none", 0);
         ui.cboColourOption.insertItemAt("1", 1);
         ui.cboColourOption.insertItemAt("2", 2);
     }
