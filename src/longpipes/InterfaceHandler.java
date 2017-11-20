@@ -182,8 +182,7 @@ public class InterfaceHandler {
         if (ui.chkOuterReinforcement.isSelected() == true){
             ui.chkInnerInsulation.setSelected(true);
             ui.chkInnerInsulation.setEnabled(false);
-        } else{
+        } else
             ui.chkInnerInsulation.setEnabled(true);
-        }
     }
 }
