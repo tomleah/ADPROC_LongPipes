@@ -32,13 +32,7 @@ public class Interface extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        lblPipeLength = new javax.swing.JLabel();
-        txtPipeLength = new javax.swing.JTextField();
-        txtPipeDiameter = new javax.swing.JTextField();
-        lblPipeDiameter = new javax.swing.JLabel();
-        lblPlasticGrade = new javax.swing.JLabel();
-        cboPlasticGrade = new javax.swing.JComboBox<>();
-        lblColourOption = new javax.swing.JLabel();
+        panAdd = new javax.swing.JPanel();
         cboColourOption = new javax.swing.JComboBox<>();
         chkInnerInsulation = new javax.swing.JCheckBox();
         chkOuterReinforcement = new javax.swing.JCheckBox();
@@ -48,6 +42,18 @@ public class Interface extends javax.swing.JFrame {
         lblOrderCost = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
         btnFinish = new javax.swing.JButton();
+        lblPipeLength = new javax.swing.JLabel();
+        txtPipeLength = new javax.swing.JTextField();
+        txtPipeDiameter = new javax.swing.JTextField();
+        lblPipeDiameter = new javax.swing.JLabel();
+        lblPlasticGrade = new javax.swing.JLabel();
+        cboPlasticGrade = new javax.swing.JComboBox<>();
+        lblColourOption = new javax.swing.JLabel();
+        panTable = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnQuit = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
 
         jTextField3.setName("txtPipeDiameter"); // NOI18N
 
@@ -60,27 +66,6 @@ public class Interface extends javax.swing.JFrame {
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitle.setText("LongPipes");
         lblTitle.setName("lblTitle"); // NOI18N
-
-        lblPipeLength.setText("Length of Pipe (metres):");
-        lblPipeLength.setName("lblPipeLength"); // NOI18N
-
-        txtPipeLength.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtPipeLength.setName("txtPipeLength"); // NOI18N
-
-        txtPipeDiameter.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtPipeDiameter.setName("txtPipeDiameter"); // NOI18N
-
-        lblPipeDiameter.setText("Outer Pipe Diameter (Inches):");
-        lblPipeDiameter.setName("lblPipeDiameter"); // NOI18N
-
-        lblPlasticGrade.setText("Grade of Plastic:");
-        lblPlasticGrade.setName("lblPlasticGrade"); // NOI18N
-
-        cboPlasticGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        cboPlasticGrade.setName("cboPlasticGrade"); // NOI18N
-
-        lblColourOption.setText("Colour Option:");
-        lblColourOption.setName("lblColourOption"); // NOI18N
 
         cboColourOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "1", "2" }));
         cboColourOption.setName("cboColourOption"); // NOI18N
@@ -116,71 +101,89 @@ public class Interface extends javax.swing.JFrame {
         });
 
         btnFinish.setText("Finish");
+        btnFinish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFinishMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
+        lblPipeLength.setText("Length of Pipe (metres):");
+        lblPipeLength.setName("lblPipeLength"); // NOI18N
+
+        txtPipeLength.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtPipeLength.setName("txtPipeLength"); // NOI18N
+
+        txtPipeDiameter.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtPipeDiameter.setName("txtPipeDiameter"); // NOI18N
+
+        lblPipeDiameter.setText("Outer Pipe Diameter (Inches):");
+        lblPipeDiameter.setName("lblPipeDiameter"); // NOI18N
+
+        lblPlasticGrade.setText("Grade of Plastic:");
+        lblPlasticGrade.setName("lblPlasticGrade"); // NOI18N
+
+        cboPlasticGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        cboPlasticGrade.setName("cboPlasticGrade"); // NOI18N
+
+        lblColourOption.setText("Colour Option:");
+        lblColourOption.setName("lblColourOption"); // NOI18N
+
+        javax.swing.GroupLayout panAddLayout = new javax.swing.GroupLayout(panAdd);
+        panAdd.setLayout(panAddLayout);
+        panAddLayout.setHorizontalGroup(
+            panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitle)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panAddLayout.createSequentialGroup()
+                        .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(chkInnerInsulation)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(panAddLayout.createSequentialGroup()
+                                    .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblPipeDiameter)
                                         .addComponent(lblPlasticGrade, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(lblPipeLength, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(lblColourOption, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cboColourOption, 0, 96, Short.MAX_VALUE)
+                                    .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cboColourOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(cboPlasticGrade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtPipeLength)
-                                        .addComponent(txtPipeDiameter)))
+                                        .addComponent(txtPipeDiameter, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(chkOuterReinforcement)
                                 .addComponent(chkChemicalResistance))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
                                 .addComponent(lblQuantity)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(14, 14, 14))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblOrderCost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnFinish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
-                                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addGap(4, 4, 4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
+                        .addComponent(lblOrderCost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFinish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        panAddLayout.setVerticalGroup(
+            panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAddLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPipeLength)
                     .addComponent(txtPipeLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPipeDiameter)
                     .addComponent(txtPipeDiameter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPlasticGrade)
                     .addComponent(cboPlasticGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboColourOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblColourOption))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -190,16 +193,94 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chkChemicalResistance)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQuantity)
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(8, 8, 8)
+                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrderCost)
                     .addComponent(btnFinish))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panTable.setEnabled(false);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        btnQuit.setText("Quit");
+
+        btnEdit.setText("Edit");
+        btnEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnEditMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panTableLayout = new javax.swing.GroupLayout(panTable);
+        panTable.setLayout(panTableLayout);
+        panTableLayout.setHorizontalGroup(
+            panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTableLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panTableLayout.createSequentialGroup()
+                        .addComponent(btnEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnQuit))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
+        );
+        panTableLayout.setVerticalGroup(
+            panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panTableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuit)
+                    .addComponent(btnEdit))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblTitle)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
         );
 
         pack();
@@ -209,6 +290,14 @@ public class Interface extends javax.swing.JFrame {
     private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
         handler.validateInputs();
     }//GEN-LAST:event_btnAddMouseClicked
+
+    private void btnFinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinishMouseClicked
+        handler.switchPanel();
+    }//GEN-LAST:event_btnFinishMouseClicked
+
+    private void btnEditMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMousePressed
+        handler.switchPanel();
+    }//GEN-LAST:event_btnEditMousePressed
 
     /**
      * @param args the command line arguments
@@ -247,14 +336,18 @@ public class Interface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnFinish;
+    private javax.swing.JButton btnQuit;
     public javax.swing.JComboBox<String> cboColourOption;
     public javax.swing.JComboBox<String> cboPlasticGrade;
     public javax.swing.JCheckBox chkChemicalResistance;
     public javax.swing.JCheckBox chkInnerInsulation;
     public javax.swing.JCheckBox chkOuterReinforcement;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblColourOption;
     private javax.swing.JLabel lblOrderCost;
@@ -263,6 +356,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel lblPlasticGrade;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JLabel lblTitle;
+    public javax.swing.JPanel panAdd;
+    public javax.swing.JPanel panTable;
     public javax.swing.JTextField txtPipeDiameter;
     public javax.swing.JTextField txtPipeLength;
     public javax.swing.JTextField txtQuantity;

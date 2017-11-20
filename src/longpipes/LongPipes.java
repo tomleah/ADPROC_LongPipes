@@ -1,5 +1,6 @@
 package longpipes;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import longpipes.pipes.Pipe;
 import longpipes.pipes.Pipe1;
@@ -15,6 +16,9 @@ public class LongPipes {
     public static void main(String[] args) {
         Interface ui = new Interface();
         ui.setVisible(true);
+        ui.panAdd.setVisible(true);
+        ui.panTable.setVisible(false);
+        ui.setSize(new Dimension(ui.panAdd.getWidth() + 50, ui.panAdd.getHeight() + 100));
     }
 
     public static boolean addPipe(double length, double diameter, int grade, int colour, boolean insulation,

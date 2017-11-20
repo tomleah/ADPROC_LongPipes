@@ -30,6 +30,7 @@ public class Pipe {
         this.quantity = quantity;
     }
 
+    //TODO: We can do this smarter. Move into Pipe classes..
     public double getUnitCost() {
         double cost = getPlasticVolume() * getCostPerInch();
         double extra = 1;

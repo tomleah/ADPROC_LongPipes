@@ -1,6 +1,6 @@
 package longpipes;
 
-import java.util.InputMismatchException;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -104,5 +104,21 @@ public class InterfaceHandler {
         ui.chkOuterReinforcement.setSelected(false);
         ui.chkChemicalResistance.setSelected(false);
         ui.txtQuantity.setText("0");
+    }
+    
+    boolean adding = false;
+    public void switchPanel(){
+        adding = !adding;
+        if (adding){
+            ui.panTable.setVisible(false);
+            ui.panAdd.setVisible(true);
+            System.out.println(ui.panAdd.getWidth());
+            ui.setSize(new Dimension(ui.panAdd.getWidth() + 500, ui.panAdd.getHeight() + 1000));
+        } else {
+            ui.panAdd.setVisible(false);
+            ui.panTable.setVisible(true);
+            System.out.println(ui.panTable.getWidth());
+            ui.setSize(new Dimension(ui.panTable.getWidth() + 50, ui.panTable.getHeight() + 100));
+        }
     }
 }
