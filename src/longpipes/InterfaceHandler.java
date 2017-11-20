@@ -144,8 +144,7 @@ public class InterfaceHandler {
         {
             ui.cboColourOption.removeItemAt(0);
             ui.cboColourOption.removeItemAt(0);
-        } else 
-            ui.cboColourOption.removeItemAt(0);
+        } 
         ui.cboColourOption.setSelectedIndex(0);
     }
     
