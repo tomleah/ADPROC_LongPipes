@@ -18,7 +18,7 @@ public class LongPipes {
         ui.setVisible(true);
         ui.panAdd.setVisible(true);
         ui.panTable.setVisible(false);
-        ui.setSize(new Dimension(ui.panAdd.getWidth() + 50, ui.panAdd.getHeight() + 100));
+        ui.setSize(new Dimension(ui.panAdd.getPreferredSize().width + 50, ui.panAdd.getPreferredSize().height + 100));
     }
 
     public static boolean addPipe(double length, double diameter, int grade, int colour, boolean insulation,

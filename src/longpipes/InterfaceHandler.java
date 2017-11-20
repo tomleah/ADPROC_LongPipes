@@ -3,6 +3,8 @@ package longpipes;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import longpipes.pipes.Pipe;
 
 public class InterfaceHandler {
     Interface ui;
@@ -110,15 +112,25 @@ public class InterfaceHandler {
     public void switchPanel(){
         adding = !adding;
         if (adding){
+            //Adding
             ui.panTable.setVisible(false);
             ui.panAdd.setVisible(true);
-            System.out.println(ui.panAdd.getWidth());
-            ui.setSize(new Dimension(ui.panAdd.getWidth() + 500, ui.panAdd.getHeight() + 1000));
+            ui.setSize(new Dimension(ui.panAdd.getPreferredSize().width + 50, ui.panAdd.getPreferredSize().height + 100));
         } else {
+            //Table
             ui.panAdd.setVisible(false);
             ui.panTable.setVisible(true);
-            System.out.println(ui.panTable.getWidth());
-            ui.setSize(new Dimension(ui.panTable.getWidth() + 50, ui.panTable.getHeight() + 100));
+            ui.setSize(new Dimension(ui.panTable.getPreferredSize().width + 50, ui.panTable.getPreferredSize().height + 100));
+            updateTable();
         }
+    }
+    
+    public void updateTable(){
+        DefaultTableModel model = (DefaultTableModel) ui.tblInvoice.getModel();
+        model.setRowCount(0);
+        for (Pipe pipe : LongPipes.pipes){
+            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), pipe.getTotalCost()});
+        }
+        
     }
 }
