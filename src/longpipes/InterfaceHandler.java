@@ -135,12 +135,12 @@ public class InterfaceHandler {
     
     public void updateColourOptions(){
         resetColourPrint();
-        if (Integer.parseInt(String.valueOf(ui.cboPlasticGrade.getSelectedItem())) == 1)
+        if (ui.cboPlasticGrade.getSelectedItem() == "1")
         {
             ui.cboColourOption.removeItemAt(1);
             ui.cboColourOption.removeItemAt(1);
         }
-        else if (Integer.parseInt(String.valueOf(ui.cboPlasticGrade.getSelectedItem())) == 5)
+        else if (ui.cboPlasticGrade.getSelectedItem() == "5")
         {
             ui.cboColourOption.removeItemAt(0);
             ui.cboColourOption.removeItemAt(0);
@@ -158,7 +158,7 @@ public class InterfaceHandler {
     public void updateCheckboxes(){
         ui.chkInnerInsulation.setEnabled(true);
         ui.chkOuterReinforcement.setEnabled(true);
-        if (String.valueOf(ui.cboColourOption.getSelectedItem()) != "2"){
+        if (ui.cboColourOption.getSelectedItem() != "2"){
             ui.chkInnerInsulation.setSelected(false);
             ui.chkOuterReinforcement.setSelected(false);
             ui.chkInnerInsulation.setEnabled(false);
