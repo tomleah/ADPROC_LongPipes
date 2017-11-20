@@ -77,5 +77,22 @@ public class LongPipes {
         return false;
 
     }
-
+public static int chkTempType(int grade, String colour){
+        //chkType 0 = type I
+        //chkType 1 = type II
+        //chkType 2 = type III - IV
+        //chkType 3 = type V 
+        int chkType;
+        if (grade <= 3 &&
+                colour == "none")
+            chkType = 0;
+        else if (grade <= 4 &&
+                    colour == "1")
+            chkType = 1;
+        else if (grade == 2 &&
+                    colour == "2")
+            chkType = 2;
+        else chkType = 3;
+        return chkType;
+    }
 }
