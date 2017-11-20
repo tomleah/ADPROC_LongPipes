@@ -146,6 +146,7 @@ public class InterfaceHandler {
             ui.cboColourOption.removeItemAt(0);
         } else 
             ui.cboColourOption.removeItemAt(0);
+        ui.cboColourOption.setSelectedIndex(0);
     }
     
     public void resetColourPrint(){
@@ -158,12 +159,19 @@ public class InterfaceHandler {
     public void updateCheckboxes(){
         ui.chkInnerInsulation.setEnabled(true);
         ui.chkOuterReinforcement.setEnabled(true);
-        if (ui.cboColourOption.getSelectedItem() != "2"){
+        int plasticGrade = Integer.parseInt(String.valueOf(ui.cboPlasticGrade.getSelectedItem()));
+        String colourOption; 
+        colourOption = String.valueOf(ui.cboColourOption.getSelectedItem());
+        int tempType = LongPipes.chkTempType(plasticGrade, colourOption);
+        if(tempType == 0 ||
+                tempType == 1){
             ui.chkInnerInsulation.setSelected(false);
             ui.chkOuterReinforcement.setSelected(false);
             ui.chkInnerInsulation.setEnabled(false);
             ui.chkOuterReinforcement.setEnabled(false);
+        }else if(tempType == 2){
+         ui.chkOuterReinforcement.setSelected(false);
+         ui.chkOuterReinforcement.setEnabled(false); 
         }
-           
     }
 }
