@@ -307,6 +307,10 @@ public class Interface extends javax.swing.JFrame {
         handler.updateCheckboxes();
     }    
     
+    private void chkOuterReinforcementActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        handler.updateChkOuter();
+    }                                                     
+
     /**
      * @param args the command line arguments
      */
