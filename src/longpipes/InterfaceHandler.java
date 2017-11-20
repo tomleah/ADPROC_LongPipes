@@ -177,4 +177,13 @@ public class InterfaceHandler {
          ui.chkOuterReinforcement.setEnabled(false); 
         }
     }
+    
+    public void updateChkOuter(){
+        if (ui.chkOuterReinforcement.isSelected() == true){
+            ui.chkInnerInsulation.setSelected(true);
+            ui.chkInnerInsulation.setEnabled(false);
+        } else{
+            ui.chkInnerInsulation.setEnabled(true);
+        }
+    }
 }
