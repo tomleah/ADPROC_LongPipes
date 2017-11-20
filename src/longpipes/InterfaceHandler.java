@@ -140,6 +140,10 @@ public class InterfaceHandler {
             ui.cboColourOption.removeItemAt(1);
             ui.cboColourOption.removeItemAt(1);
         }
+        if (ui.cboPlasticGrade.getSelectedItem() == "4")
+        {
+            ui.cboColourOption.removeItemAt(0);
+        }
         else if (ui.cboPlasticGrade.getSelectedItem() == "5")
         {
             ui.cboColourOption.removeItemAt(0);
