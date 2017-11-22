@@ -1,6 +1,7 @@
 package longpipes;
 
 import java.awt.Dimension;
+import java.text.DecimalFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -115,12 +116,14 @@ public class InterfaceHandler {
             //Adding
             ui.panTable.setVisible(false);
             ui.panAdd.setVisible(true);
+            ui.lblTitle.setText("LongPipes");
             ui.setSize(new Dimension(ui.panAdd.getPreferredSize().width + 50, ui.panAdd.getPreferredSize().height + 100));
         } else {
             //Table
             ui.panAdd.setVisible(false);
             ui.panTable.setVisible(true);
-            ui.setSize(new Dimension(ui.panTable.getPreferredSize().width + 50, ui.panTable.getPreferredSize().height + 100));
+            ui.lblTitle.setText("Invoice - LongPipes");
+            ui.setSize(new Dimension(ui.panTable.getPreferredSize().width + 600, ui.panTable.getPreferredSize().height + 100));
             updateTable();
         }
     }
@@ -128,8 +131,10 @@ public class InterfaceHandler {
     public void updateTable(){
         DefaultTableModel model = (DefaultTableModel) ui.tblInvoice.getModel();
         model.setRowCount(0);
+        DecimalFormat df2 = new DecimalFormat(".##");
         for (Pipe pipe : LongPipes.pipes){
-            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), pipe.getTotalCost()});
+            String totalPrice = df2.format(pipe.getTotalCost());
+            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
         }
     }
     
