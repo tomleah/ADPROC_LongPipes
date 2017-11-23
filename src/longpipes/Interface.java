@@ -39,7 +39,6 @@ public class Interface extends javax.swing.JFrame {
         chkChemicalResistance = new javax.swing.JCheckBox();
         lblQuantity = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
-        lblOrderCost = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
         btnFinish = new javax.swing.JButton();
         lblPipeLength = new javax.swing.JLabel();
@@ -53,7 +52,8 @@ public class Interface extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInvoice = new javax.swing.JTable();
         btnQuit = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        lblTotalPrice = new javax.swing.JLabel();
 
         jTextField3.setName("txtPipeDiameter"); // NOI18N
 
@@ -88,10 +88,6 @@ public class Interface extends javax.swing.JFrame {
         txtQuantity.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtQuantity.setText("0");
         txtQuantity.setName("txtQuantity"); // NOI18N
-
-        lblOrderCost.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblOrderCost.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblOrderCost.setText("Order Cost: £0");
 
         btnAdd.setText("Add");
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,8 +155,7 @@ public class Interface extends javax.swing.JFrame {
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(4, 4, 4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
-                        .addComponent(lblOrderCost, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(183, 183, 183)
                         .addComponent(btnFinish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panAddLayout.createSequentialGroup()
                         .addGap(191, 191, 191)
@@ -199,9 +194,7 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd)
                 .addGap(8, 8, 8)
-                .addGroup(panAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOrderCost)
-                    .addComponent(btnFinish))
+                .addComponent(btnFinish)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -218,39 +211,51 @@ public class Interface extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblInvoice);
 
         btnQuit.setText("Quit");
-
-        btnEdit.setText("Edit");
-        btnEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnQuit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnEditMousePressed(evt);
+                btnQuitMousePressed(evt);
             }
         });
+
+        btnBack.setText("Back");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnBackMousePressed(evt);
+            }
+        });
+
+        lblTotalPrice.setText("£12.34");
 
         javax.swing.GroupLayout panTableLayout = new javax.swing.GroupLayout(panTable);
         panTable.setLayout(panTableLayout);
         panTableLayout.setHorizontalGroup(
             panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTableLayout.createSequentialGroup()
+            .addGroup(panTableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(panTableLayout.createSequentialGroup()
+                .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTableLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnQuit)))
+                        .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panTableLayout.createSequentialGroup()
+                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnQuit)))))
                 .addContainerGap())
         );
         panTableLayout.setVerticalGroup(
             panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panTableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTotalPrice)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnQuit)
-                    .addComponent(btnEdit))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBack))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,7 +284,7 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -291,13 +296,17 @@ public class Interface extends javax.swing.JFrame {
         handler.validateInputs();
     }//GEN-LAST:event_btnAddMouseClicked
 
-    private void btnEditMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMousePressed
+    private void btnBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMousePressed
         handler.switchPanel();
-    }//GEN-LAST:event_btnEditMousePressed
+    }//GEN-LAST:event_btnBackMousePressed
 
     private void btnFinishMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinishMousePressed
         handler.switchPanel();
     }//GEN-LAST:event_btnFinishMousePressed
+
+    private void btnQuitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuitMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitMousePressed
     
     private void cboPlasticGradeActionPerformed(java.awt.event.ActionEvent evt) {                                                
         handler.updateColourOptions();
@@ -348,7 +357,7 @@ public class Interface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnFinish;
     private javax.swing.JButton btnQuit;
     public javax.swing.JComboBox<String> cboColourOption;
@@ -361,12 +370,12 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblColourOption;
-    private javax.swing.JLabel lblOrderCost;
     private javax.swing.JLabel lblPipeDiameter;
     private javax.swing.JLabel lblPipeLength;
     private javax.swing.JLabel lblPlasticGrade;
     private javax.swing.JLabel lblQuantity;
     public javax.swing.JLabel lblTitle;
+    public javax.swing.JLabel lblTotalPrice;
     public javax.swing.JPanel panAdd;
     public javax.swing.JPanel panTable;
     public javax.swing.JTable tblInvoice;
