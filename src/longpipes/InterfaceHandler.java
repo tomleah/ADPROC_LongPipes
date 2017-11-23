@@ -60,7 +60,7 @@ public class InterfaceHandler {
                 error += "Diameter of pipe must be a number! \n";
             }
             
-            if (diameter <= 0 && diameter > 12){
+            if (diameter <= 0 || diameter > 12){
                 error += "Diameter must between 0 and 12 inches. \n";
             } 
         }
@@ -87,8 +87,9 @@ public class InterfaceHandler {
         }
         //We all valid!
         else {
-            if(!LongPipes.addPipe(length, diameter, plasticGrade, colourOption, innerInsulation,
-            outerReinforcement, chemicalResistance, quantity)) {
+            Pipe pipe = LongPipes.addPipe(length, diameter, plasticGrade, colourOption, innerInsulation,
+            outerReinforcement, chemicalResistance, quantity);
+            if(pipe == null) {
                 JOptionPane.showMessageDialog(new JFrame(), "Pipe not found! \nTry different inputs.", "Invalid Pipe", JOptionPane.ERROR_MESSAGE);
             }
             else {
@@ -126,14 +127,15 @@ public class InterfaceHandler {
             ui.setSize(new Dimension(ui.panTable.getPreferredSize().width + 600, ui.panTable.getPreferredSize().height + 100));
             updateTable();
         }
+        ui.lblTotalPrice.setText("Total: £" + LongPipes.round(LongPipes.getTotalOrderCost()));
     }
     
     public void updateTable(){
         DefaultTableModel model = (DefaultTableModel) ui.tblInvoice.getModel();
         model.setRowCount(0);
-        DecimalFormat df2 = new DecimalFormat(".##");
+        
         for (Pipe pipe : LongPipes.pipes){
-            String totalPrice = df2.format(pipe.getTotalCost());
+            double totalPrice = LongPipes.round(pipe.getTotalCost());
             model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
         }
     }
@@ -145,7 +147,7 @@ public class InterfaceHandler {
             ui.cboColourOption.removeItemAt(1);
             ui.cboColourOption.removeItemAt(1);
         }
-        if (ui.cboPlasticGrade.getSelectedItem() == "4")
+        else if (ui.cboPlasticGrade.getSelectedItem() == "4")
         {
             ui.cboColourOption.removeItemAt(0);
         }
@@ -184,7 +186,7 @@ public class InterfaceHandler {
     }
     
     public void updateChkOuter(){
-        if (ui.chkOuterReinforcement.isSelected() == true){
+        if (ui.chkOuterReinforcement.isSelected()){
             ui.chkInnerInsulation.setSelected(true);
             ui.chkInnerInsulation.setEnabled(false);
         } else
