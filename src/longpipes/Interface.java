@@ -208,6 +208,7 @@ public class Interface extends javax.swing.JFrame {
                 "Plastic Grade", "Colour Option", "Inner Insulation", "Outer Reinforcement", "Chemical Resistance", "Quantity", "Total Price"
             }
         ));
+        tblInvoice.setEnabled(false);
         jScrollPane1.setViewportView(tblInvoice);
 
         btnQuit.setText("Quit");
