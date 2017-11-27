@@ -1,7 +1,6 @@
 package longpipes;
 
 import java.awt.Dimension;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import longpipes.pipes.Pipe;
 import longpipes.pipes.Pipe1;
@@ -103,8 +102,7 @@ public class LongPipes {
     }
     
     public static double round(double input){
-        DecimalFormat df2 = new DecimalFormat(".##");
-        return Double.parseDouble(df2.format(input));
+        return (double) Math.round(input * 100) / 100;
     }
 }
 
