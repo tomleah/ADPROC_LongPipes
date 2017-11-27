@@ -11,6 +11,7 @@ public class Pipe4 extends Pipe3{
         costPerInch = 0.8;
     }
     
+    @Override
     public boolean isInsulated(){
         return insulation;
     }

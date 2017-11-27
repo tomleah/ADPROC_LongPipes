@@ -72,6 +72,14 @@ public class Pipe {
     public int getColour() {
         return colour;
     }
+    
+    public boolean isInsulated(){
+        return false;
+    }
+    
+    public boolean isReinforced(){
+        return false;
+    }
 
     public boolean isResistance() {
         return resistance;

@@ -11,6 +11,7 @@ public class Pipe5 extends Pipe4{
         costPerInch = 0.95;
     }
     
+    @Override
     public boolean isReinforced(){
         return reinforcement;
     }
