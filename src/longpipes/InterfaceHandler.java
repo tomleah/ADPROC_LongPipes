@@ -1,7 +1,6 @@
 package longpipes;
 
 import java.awt.Dimension;
-import java.text.DecimalFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -136,7 +135,8 @@ public class InterfaceHandler {
         
         for (Pipe pipe : LongPipes.pipes){
             double totalPrice = LongPipes.round(pipe.getTotalCost());
-            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
+            //Replace false with values, need to alter inheritance.
+            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulated(), pipe.isReinforced(), pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
         }
     }
     
