@@ -1,6 +1,6 @@
 package longpipes.pipes;
 
-public class Pipe4 extends Pipe{
+public class Pipe4 extends Pipe3{
     
     public Pipe4(double length, double diameter, int grade, int colour,
             boolean insulation, boolean reinforcement, boolean resistance, int quantity) {
