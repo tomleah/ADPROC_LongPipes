@@ -50,8 +50,7 @@ public class LongPipes {
             colour == 2 && 
             insulation == false && 
             reinforcement == false) {
-            pipe = new Pipe3(length, diameter, grade, colour, insulation,
-            reinforcement, resistance, quantity);
+            pipe = new Pipe3(length, diameter, grade, colour, resistance, quantity);
         }
         //Pipe 4
         else if (grade >= 2 && 
@@ -60,7 +59,7 @@ public class LongPipes {
             insulation == true && 
             reinforcement == false) {
             pipe = new Pipe4(length, diameter, grade, colour, insulation,
-            reinforcement, resistance, quantity);
+             resistance, quantity);
         }
         //Pipe 5
         else if (grade >= 3 && 

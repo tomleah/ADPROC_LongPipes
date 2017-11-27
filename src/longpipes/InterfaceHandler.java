@@ -136,7 +136,8 @@ public class InterfaceHandler {
         
         for (Pipe pipe : LongPipes.pipes){
             double totalPrice = LongPipes.round(pipe.getTotalCost());
-            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), pipe.isInsulation(), pipe.isReinforcement(), pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
+            //Replace false with values, need to alter inheritance.
+            model.addRow(new Object[] {pipe.getGrade(), pipe.getColour(), false, false, pipe.isResistance(), pipe.getQuantity(), "£" + totalPrice});
         }
     }
     
