@@ -6,7 +6,6 @@ public class Pipe2 extends Pipe {
             boolean insulation, boolean reinforcement, boolean resistance, int quantity) {
         super(length, diameter, grade, colour, 
                 resistance, quantity);
-        costPerInch = 0.6;
     }
 
 }

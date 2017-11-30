@@ -27,7 +27,7 @@ public class Pipe {
     }
 
     public double getUnitCost() {
-        double cost = getPlasticVolume() * getCostPerInch();
+        double cost = getPlasticVolume() * getCostPerInch(getGrade());
         double extra = 1;
         if (colour == 1) {
             extra += 0.12;
@@ -41,12 +41,33 @@ public class Pipe {
         return cost * extra;
     }
 
+    public double getCostPerInch(int grade) {
+        switch (grade) {
+            case 1:
+                return 0.4;
+            case 2:
+                return 0.6;
+            case 3:
+                return 0.75;
+            case 4:
+                return 0.8;
+            case 5:
+                return 0.95;
+            default:
+                return -1;
+        }
+    }
+
     public double getTotalCost() {
         return getUnitCost() * quantity;
     }
 
     public double getPlasticVolume() {
-        return (metersToInches(length) * ((Math.PI * outerDiameter) - (Math.PI * innerDiameter)));
+        return (metersToInches(length) * ((Math.PI * Math.pow(getRadius(outerDiameter), 2)) - (Math.PI * Math.pow(getRadius(innerDiameter), 2))));
+    }
+
+    public double getRadius(double diameter) {
+        return diameter / 2;
     }
 
     public double metersToInches(double meters) {
@@ -72,12 +93,12 @@ public class Pipe {
     public int getColour() {
         return colour;
     }
-    
-    public boolean isInsulated(){
+
+    public boolean isInsulated() {
         return false;
     }
-    
-    public boolean isReinforced(){
+
+    public boolean isReinforced() {
         return false;
     }
 
@@ -87,10 +108,6 @@ public class Pipe {
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public double getCostPerInch() {
-        return costPerInch;
     }
 
 }

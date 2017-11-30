@@ -8,7 +8,6 @@ public class Pipe4 extends Pipe3{
             boolean insulation, boolean resistance, int quantity) {
         super(length, diameter, grade, colour, resistance, quantity);
         this.insulation = insulation;
-        costPerInch = 0.8;
     }
     
     @Override
