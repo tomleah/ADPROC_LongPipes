@@ -1,6 +1,6 @@
 package longpipes.pipes;
 
-public class Pipe {
+public abstract class Pipe {
 
     private double length;
     private double outerDiameter;
@@ -14,7 +14,7 @@ public class Pipe {
 
     public Pipe() {
     }
-
+    
     public Pipe(double length, double diameter, int grade, int colour,
             boolean resistance, int quantity) {
         this.length = length;

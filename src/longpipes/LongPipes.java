@@ -27,8 +27,7 @@ public class LongPipes {
         Pipe pipe = null;
         
         //Pipe 1
-        if (grade >= 1 && 
-            grade <= 3 && 
+        if (grade <= 3 && 
             colour == 0 && 
             insulation == false && 
             reinforcement == false) {
@@ -46,7 +45,6 @@ public class LongPipes {
         }
         //Pipe 3
         else if (grade >= 2 && 
-            grade <= 5 && 
             colour == 2 && 
             insulation == false && 
             reinforcement == false) {
@@ -54,7 +52,6 @@ public class LongPipes {
         }
         //Pipe 4
         else if (grade >= 2 && 
-            grade <= 5 && 
             colour == 2 && 
             insulation == true && 
             reinforcement == false) {
@@ -62,8 +59,7 @@ public class LongPipes {
              resistance, quantity);
         }
         //Pipe 5
-        else if (grade >= 3 && 
-            grade <= 5 && 
+        else if (grade >= 3 &&  
             colour == 2 && 
             insulation == true && 
             reinforcement == true) {
@@ -72,24 +68,6 @@ public class LongPipes {
         }
         if (pipe != null) pipes.add(pipe);
         return pipe;
-    }
-    public static int chkTempType(int grade, String colour){
-            //chkType 0 = type I
-            //chkType 1 = type II
-            //chkType 2 = type III - IV
-            //chkType 3 = type V 
-            int chkType;
-            if (grade <= 3 &&
-                    colour == "none")
-                chkType = 0;
-            else if (grade <= 4 &&
-                        colour == "1")
-                chkType = 1;
-            else if (grade == 2 &&
-                        colour == "2")
-                chkType = 2;
-            else chkType = 3;
-            return chkType;
     }
 
     public static double getTotalOrderCost(){

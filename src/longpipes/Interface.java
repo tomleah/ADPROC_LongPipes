@@ -90,16 +90,16 @@ public class Interface extends javax.swing.JFrame {
         txtQuantity.setName("txtQuantity"); // NOI18N
 
         btnAdd.setText("Add");
-        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddMouseClicked(evt);
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
             }
         });
 
         btnFinish.setText("Finish");
-        btnFinish.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnFinishMousePressed(evt);
+        btnFinish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinishActionPerformed(evt);
             }
         });
 
@@ -212,16 +212,16 @@ public class Interface extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblInvoice);
 
         btnQuit.setText("Quit");
-        btnQuit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnQuitMousePressed(evt);
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
             }
         });
 
         btnBack.setText("Back");
-        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnBackMousePressed(evt);
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -293,33 +293,33 @@ public class Interface extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         handler.validateInputs();
-    }//GEN-LAST:event_btnAddMouseClicked
+    }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMousePressed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         handler.switchPanel();
-    }//GEN-LAST:event_btnBackMousePressed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnFinishMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinishMousePressed
+    private void btnFinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinishActionPerformed
         handler.switchPanel();
-    }//GEN-LAST:event_btnFinishMousePressed
+    }//GEN-LAST:event_btnFinishActionPerformed
 
-    private void btnQuitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuitMousePressed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_btnQuitMousePressed
+    }//GEN-LAST:event_btnQuitActionPerformed
     
-    private void cboPlasticGradeActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        handler.updateColourOptions();
-    }                                               
-
-    private void cboColourOptionActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        handler.updateCheckboxes();
-    }    
-    
-    private void chkOuterReinforcementActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        handler.updateChkOuter();
-    }                                                     
+//    private void cboPlasticGradeActionPerformed(java.awt.event.ActionEvent evt) {                                                
+//        handler.updateColourOptions();
+//    }                                               
+//
+//    private void cboColourOptionActionPerformed(java.awt.event.ActionEvent evt) {                                                
+//        handler.updateCheckboxes();
+//    }    
+//    
+//    private void chkOuterReinforcementActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+//        handler.updateChkOuter();
+//    }                                                     
 
     /**
      * @param args the command line arguments

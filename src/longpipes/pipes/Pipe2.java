@@ -7,5 +7,4 @@ public class Pipe2 extends Pipe {
         super(length, diameter, grade, colour, 
                 resistance, quantity);
     }
-
 }
