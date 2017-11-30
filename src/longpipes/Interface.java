@@ -308,18 +308,6 @@ public class Interface extends javax.swing.JFrame {
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
-    
-//    private void cboPlasticGradeActionPerformed(java.awt.event.ActionEvent evt) {                                                
-//        handler.updateColourOptions();
-//    }                                               
-//
-//    private void cboColourOptionActionPerformed(java.awt.event.ActionEvent evt) {                                                
-//        handler.updateCheckboxes();
-//    }    
-//    
-//    private void chkOuterReinforcementActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-//        handler.updateChkOuter();
-//    }                                                     
 
     /**
      * @param args the command line arguments
