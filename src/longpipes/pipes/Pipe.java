@@ -1,5 +1,10 @@
 package longpipes.pipes;
 
+/**
+ * Pipe
+ * Main pipe class containing common properties for all types of pipe.
+ */
+
 public abstract class Pipe {
 
     private double length;
@@ -12,9 +17,19 @@ public abstract class Pipe {
 
     public double costPerInch;
 
+    //Constructor
     public Pipe() {
     }
     
+    /**
+     * Constructor
+     * @param length
+     * @param diameter
+     * @param grade
+     * @param colour
+     * @param resistance is the pipe chemical resistant? 
+     * @param quantity 
+     */
     public Pipe(double length, double diameter, int grade, int colour,
             boolean resistance, int quantity) {
         this.length = length;
@@ -26,9 +41,22 @@ public abstract class Pipe {
         this.quantity = quantity;
     }
 
+    /**
+     * Method to return cost of 1 pipe with the given values.
+     * @return double returns the cost of 1 unit in £.
+     */
     public double getUnitCost() {
         double cost = getPlasticVolume() * getCostPerInch(getGrade());
-        double extra = 1;
+        return cost * getAdditionalCost();
+    }
+    
+    /**
+     * Method calculates any additional costs the pipe may occur.
+     * @return double returns the additional cost multiplier.
+     */
+    public double getAdditionalCost(){
+         double extra = 1;
+        //Find any additional costs the pipe may have.
         if (colour == 1) {
             extra += 0.12;
         }
@@ -38,9 +66,14 @@ public abstract class Pipe {
         if (resistance) {
             extra += 0.14;
         }
-        return cost * extra;
+        return extra;
     }
 
+    /**
+     * Method returns the cost per inch of plastic depending on the grade.
+     * @param grade grade of plastic
+     * @return double 
+     */
     public double getCostPerInch(int grade) {
         switch (grade) {
             case 1:
@@ -57,39 +90,72 @@ public abstract class Pipe {
                 return -1;
         }
     }
-
+    
+    /**
+     * Method returns the total cost of the pipe, including quantity.
+     * @return double
+     */
     public double getTotalCost() {
         return getUnitCost() * quantity;
     }
 
+    /**
+     * Method calculates the volume of the plastic needed for the pipe.
+     * @return double
+     */
     public double getPlasticVolume() {
-        return (metersToInches(length) * ((Math.PI * Math.pow(getRadius(outerDiameter), 2)) - (Math.PI * Math.pow(getRadius(innerDiameter), 2))));
+        return (metersToInches(getLength()) * ((Math.PI * Math.pow(getRadius(outerDiameter), 2)) - (Math.PI * Math.pow(getRadius(innerDiameter), 2))));
     }
 
+    /**
+     * Method that given a diameter will return the radius.
+     * @param diameter
+     * @return double
+     */
     public double getRadius(double diameter) {
         return diameter / 2;
     }
 
+    /**
+     * Method converts meters to inches.
+     * @param meters
+     * @return double
+     */
     public double metersToInches(double meters) {
         return meters * 39.37;
     }
 
+    /**
+     * @return the length
+     */
     public double getLength() {
         return length;
     }
 
+    /**
+     * @return the outer diameter
+     */
     public double getOuterDiameter() {
         return outerDiameter;
     }
 
+    /**
+     * @return the inner diameter
+     */
     public double getInnerDiameter() {
         return innerDiameter;
     }
 
+    /**
+     * @return the grade
+     */
     public int getGrade() {
         return grade;
     }
 
+    /**
+     * @return the colour.
+     */
     public int getColour() {
         return colour;
     }
@@ -102,10 +168,16 @@ public abstract class Pipe {
         return false;
     }
 
+    /**
+     * @return the resistance
+     */
     public boolean isResistance() {
         return resistance;
     }
 
+    /**
+     * @return the quantity.
+     */
     public int getQuantity() {
         return quantity;
     }

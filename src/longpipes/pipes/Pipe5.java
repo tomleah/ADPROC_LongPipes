@@ -10,6 +10,9 @@ public class Pipe5 extends Pipe4{
         this.reinforcement = reinforcement;
     }
     
+    /**
+     * @return if pipe is reinforced.
+     */
     @Override
     public boolean isReinforced(){
         return reinforcement;

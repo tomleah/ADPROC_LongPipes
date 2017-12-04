@@ -9,11 +9,18 @@ import longpipes.pipes.Pipe3;
 import longpipes.pipes.Pipe4;
 import longpipes.pipes.Pipe5;
 
+/**
+ * LongPipes
+ * Main application process.
+ * Class contains the functionality to add valid pipes and some utility functions.
+ */
+
 public class LongPipes {
 
     public static ArrayList<Pipe> pipes = new ArrayList<Pipe>();
 
     public static void main(String[] args) {
+        //Open up a new GUI.
         Interface ui = new Interface();
         ui.setVisible(true);
         ui.panAdd.setVisible(true);
@@ -21,6 +28,18 @@ public class LongPipes {
         ui.setSize(new Dimension(ui.panAdd.getPreferredSize().width + 50, ui.panAdd.getPreferredSize().height + 100));
     }
 
+    /**
+     * Method takes in all information about a pipe, checks if the type exists and then adds it to the list of pipes in the order.
+     * @param length
+     * @param diameter
+     * @param grade the pipe's grade of plastic
+     * @param colour how many colours the pipe will have
+     * @param insulation is the pipe insulated?
+     * @param reinforcement is the pipe reinforced?
+     * @param resistance does the pipe have chemical resistance?
+     * @param quantity
+     * @return Pipe 
+     */
     public static Pipe addPipe(double length, double diameter, int grade, int colour, boolean insulation,
             boolean reinforcement, boolean resistance, int quantity) {
 
@@ -70,6 +89,10 @@ public class LongPipes {
         return pipe;
     }
 
+    /**
+     * Method to get the total cost of the whole order of pipes.
+     * @return double returns the sum of all the pipes in the order.
+     */
     public static double getTotalOrderCost(){
         double total = 0;
         for (Pipe pipe : pipes){
@@ -78,6 +101,11 @@ public class LongPipes {
         return total;
     }
     
+    /**
+     * Method to round numbers to 2dp.
+     * @param input
+     * @return double returns the input rounded to 2dp.
+     */
     public static double round(double input){
         return (double) Math.round(input * 100) / 100;
     }

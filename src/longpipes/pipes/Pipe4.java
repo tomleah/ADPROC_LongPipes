@@ -9,7 +9,10 @@ public class Pipe4 extends Pipe3{
         super(length, diameter, grade, colour, resistance, quantity);
         this.insulation = insulation;
     }
-    
+   
+    /**
+     * @return if pipe insulated.
+     */
     @Override
     public boolean isInsulated(){
         return insulation;
