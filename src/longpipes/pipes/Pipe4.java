@@ -11,6 +11,17 @@ public class Pipe4 extends Pipe3{
     }
    
     /**
+     * Method extends functionality of super method for pipes with insulation. Returns the additional cost that the pipe will occur.
+     * @return double
+     */
+    @Override
+    public double getAdditionalCost(){
+        double extra = super.getAdditionalCost();
+        if (insulation) extra += 0.13;
+        return extra;
+    }
+    
+    /**
      * @return if pipe insulated.
      */
     @Override
